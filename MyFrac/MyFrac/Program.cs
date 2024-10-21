@@ -54,7 +54,7 @@ public class MyFrac
             return integerPart.ToString(); // if залишок нуль, результат — ціле число
         }
 
-        return $"{integerPart}+{Math.Abs(remainder)}/{frac.Denominator}"; // ціла частина+дробова частина (abs щоб не було мінус дробова частина)
+        return $"{integerPart}+{Math.Abs(remainder)}/{frac.Denominator}"; // ціла частина+дробова частина (abs щоб не було мінус дробова частина), а чи може він взагаліф бути від'ємним....
     }
     //дріб у дійсне число
     public static double DoubleValue(MyFrac frac)
@@ -68,5 +68,22 @@ public class MyFrac
         long denominator = f1.Denominator * f2.Denominator; //новий знаменник (добуток знаменників)
         return new MyFrac(numerator, denominator); // новйи дріб (конструктор скоротить)
     }
-
+    //віднімання дробів
+    public static MyFrac Minus(MyFrac f1, MyFrac f2)
+    {
+        long numerator = f1.Numerator * f2.Denominator - f2.Numerator * f1.Denominator; 
+        long denominator = f1.Denominator * f2.Denominator; 
+        return new MyFrac(numerator, denominator); 
+    }
+    //мнроження дробів
+    public static MyFrac Multiply(MyFrac f1, MyFrac f2)
+    {
+        return new MyFrac(f1.Numerator * f2.Numerator, f1.Denominator * f2.Denominator); 
+    }
+    //ділення
+    public static MyFrac Divide(MyFrac f1, MyFrac f2)
+    {
+        return new MyFrac(f1.Numerator * f2.Denominator, f1.Denominator * f2.Numerator); //множимо на обернений дріб
+    }
+    //
 }
