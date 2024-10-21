@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFrac", "MyFrac\MyFrac.csproj", "{FF74335F-33DF-4276-94E7-8380721F3930}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF74335F-33DF-4276-94E7-8380721F3930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF74335F-33DF-4276-94E7-8380721F3930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF74335F-33DF-4276-94E7-8380721F3930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF74335F-33DF-4276-94E7-8380721F3930}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {699BB1CA-EEF9-4A15-B75F-6A1D73DABB65}
+	EndGlobalSection
+EndGlobal
