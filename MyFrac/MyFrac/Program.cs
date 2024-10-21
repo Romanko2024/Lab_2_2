@@ -38,4 +38,10 @@ public class MyFrac
         }
         return a;
     }
+
+    public override string ToString()
+    {
+        return $"{Numerator}/{Denominator}";
+    }
+
 }
