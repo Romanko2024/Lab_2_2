@@ -85,5 +85,26 @@ public class MyFrac
     {
         return new MyFrac(f1.Numerator * f2.Denominator, f1.Denominator * f2.Numerator); //множимо на обернений дріб
     }
-    //
+    //сума рядка
+    public static MyFrac CalcSum1(int n)
+    {
+        MyFrac result = new MyFrac(0, 1); //початкова сума (0)
+        for (int i = 1; i <= n; i++)
+        {
+            MyFrac add = new MyFrac(1, i * (i + 1)); //формуємо доданок
+            result = Plus(result, add); //додаємо доданок до суми
+        }
+        return result; 
+    }
+    //добуток рядку
+    public static MyFrac CalcSum2(int n)
+    {
+        MyFrac result = new MyFrac(1, 1); //початковий добуток — одиниця
+        for (int i = 2; i <= n; i++)
+        {
+            MyFrac factor = new MyFrac(i + 1, 2 * i); //формуємо множник
+            result = Multiply(result, factor); //множимо на кожен наступний множник
+        }
+        return result; 
+    }
 }
