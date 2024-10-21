@@ -43,5 +43,30 @@ public class MyFrac
     {
         return $"{Numerator}/{Denominator}";
     }
+    //виділяє цілу частину з дробу
+    public static string ToStringWithIntegerPart(MyFrac frac)
+    {
+        long integerPart = frac.Numerator / frac.Denominator; //виділяє цілу частину ділення
+        long remainder = frac.Numerator % frac.Denominator;   //обчислює залишок від ділення 
+
+        if (remainder == 0)
+        {
+            return integerPart.ToString(); // if залишок нуль, результат — ціле число
+        }
+
+        return $"{integerPart}+{Math.Abs(remainder)}/{frac.Denominator}"; // ціла частина+дробова частина (abs щоб не було мінус дробова частина)
+    }
+    //дріб у дійсне число
+    public static double DoubleValue(MyFrac frac)
+    {
+        return (double)frac.Numerator / frac.Denominator; //ділимо дріб і приводимо результат до типу double
+    }
+    //додавання двох дробів
+    public static MyFrac Plus(MyFrac f1, MyFrac f2)
+    {
+        long numerator = f1.Numerator * f2.Denominator + f2.Numerator * f1.Denominator; //обчислюємо новий чисельник
+        long denominator = f1.Denominator * f2.Denominator; //новий знаменник (добуток знаменників)
+        return new MyFrac(numerator, denominator); // новйи дріб (конструктор скоротить)
+    }
 
 }
